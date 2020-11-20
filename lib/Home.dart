@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
   List data;
   Future getData() async {
     var response = await http.get(
-        "https://raw.githubusercontent.com/jatinhemnani01/pubg_walls/main/data.json?token=ARTWBO2QN5K7JQL6QN2NFVK7XAFYM");
+        "https://raw.githubusercontent.com/jatinhemnani01/pubg_walls/main/data.json");
     data = jsonDecode(response.body);
     setState(() {});
   }
