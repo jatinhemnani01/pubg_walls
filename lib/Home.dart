@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -15,7 +14,7 @@ class _HomeState extends State<Home> {
   List data;
   Future getData() async {
     var response = await http.get(
-        "https://raw.githubusercontent.com/jatinhemnani01/hoop/master/data.json");
+        "https://raw.githubusercontent.com/jatinhemnani01/pubg_walls/main/data.json?token=ARTWBO2QN5K7JQL6QN2NFVK7XAFYM");
     data = jsonDecode(response.body);
     setState(() {});
   }
