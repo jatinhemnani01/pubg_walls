@@ -3,6 +3,7 @@ import 'Home.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -17,8 +18,11 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hello"),
+        backgroundColor: Color(0xfffff),
+        title: Text("PUBG Wallpapers"),
+        centerTitle: true,
       ),
+      backgroundColor: Color(0xfffc5c65),
       body: Home(),
     );
   }

@@ -13,6 +13,7 @@ class _CacheImageJState extends State<CacheImageJ> {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
+      fit: BoxFit.contain,
       imageUrl: widget.url,
       placeholder: (context, lel) {
         return LinearProgressIndicator(
