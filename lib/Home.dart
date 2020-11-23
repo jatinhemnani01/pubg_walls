@@ -49,36 +49,36 @@ class _HomeState extends State<Home> {
               ? Container(
                   color: Colors.amber[200],
                   padding: const EdgeInsets.all(10.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
-                    child: GridView.builder(
-                      physics: BouncingScrollPhysics(),
-                      gridDelegate:
-                          SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                      ),
-                      itemCount: data == null ? 0 : data.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => FullScreenImage(
-                                          url: data[index]["url"],
-                                        )));
-                          },
+                  child: GridView.builder(
+                    physics: BouncingScrollPhysics(),
+                    gridDelegate:
+                        SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                    ),
+                    itemCount: data == null ? 0 : data.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => FullScreenImage(
+                                        url: data[index]["url"],
+                                      )));
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
                           child: Container(
                             color: Colors.black45,
                             child: CacheImageJ(
                               url: data[index]["url"],
                             ),
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 )
               : Center(child: CircularProgressIndicator());

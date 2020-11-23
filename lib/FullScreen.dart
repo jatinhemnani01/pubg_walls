@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'CacheImage.dart';
 import 'SetWall.dart';
+import 'Ads.dart';
 
 // ignore: must_be_immutable
 class FullScreenImage extends StatefulWidget {
@@ -13,21 +14,28 @@ class FullScreenImage extends StatefulWidget {
 class _FullScreenImageState extends State<FullScreenImage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: SetWall(
-        title: "Set Wallpaper",
-        url: widget.url,
-      ),
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("Walls"),
-      ),
-      body: Container(
-        color: Colors.black26,
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: CacheImageJ(
+    return WillPopScope(
+      // ignore: missing_return
+      onWillPop: () {
+        Navigator.pop(context);
+        showad();
+      },
+      child: Scaffold(
+        floatingActionButton: SetWall(
+          title: "Set Wallpaper",
           url: widget.url,
+        ),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("Walls"),
+        ),
+        body: Container(
+          color: Colors.black26,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: CacheImageJ(
+            url: widget.url,
+          ),
         ),
       ),
     );

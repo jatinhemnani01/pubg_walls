@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Home.dart';
+import 'Ads.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,6 +18,7 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BannerJ(),
       appBar: AppBar(
         backgroundColor: Color(0xfffff),
         title: Text("PUBG Wallpapers"),

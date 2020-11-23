@@ -1,6 +1,7 @@
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:wallpaper_manager/wallpaper_manager.dart';
 import 'package:flutter/material.dart';
+import 'Ads.dart';
 
 // ignore: must_be_immutable
 class SetWall extends StatefulWidget {
@@ -12,6 +13,12 @@ class SetWall extends StatefulWidget {
 }
 
 class _SetWallState extends State<SetWall> {
+  @override
+  void dispose() {
+    ded();
+    super.dispose();
+  }
+
   var file;
   donewall(url) async {
     int location = WallpaperManager
@@ -27,6 +34,7 @@ class _SetWallState extends State<SetWall> {
       child: Text(widget.title),
       onPressed: () {
         donewall(widget.url);
+        loadad();
       },
       color: Colors.blue,
     );

@@ -1,8 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pubg_walls">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="pubg_walls"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="ca-app-pub-8993298175070772~7689479687"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
